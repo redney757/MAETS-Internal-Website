@@ -1,0 +1,17 @@
+:root {
+  height: 100vh;
+}
+body {
+  height: 100vh;
+  margin: 0px;
+  
+}
+#root {
+  height: 100%;
+  padding: 5px;
+  display: grid;
+  grid-template: 2fr 15fr 2fr / 2fr 10fr 2fr;
+}
+* {
+  box-sizing: border-box;
+}
