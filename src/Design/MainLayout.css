@@ -5,17 +5,25 @@
 
 }
 header {
-    grid-column: 2/3;
-    align-content: center;
+    grid-column: 1/4;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    padding-top: 25px;
+    padding-left: 100px;
+    padding-right: 100px;
+    position: sticky;
+    z-index: 100;
+    background-color: rgb(214, 219, 215);
+    box-shadow: 0px 0.5px 3px 1px black;
 }
 #logoDiv {
-    grid-column: 1/2;
     align-content: center;
     text-align: center;
 }
 nav {
     display: flex;
-    justify-content: right;
+    align-items: center;
     
 }
 .navigationLink {
@@ -28,7 +36,8 @@ nav {
 
 }
 .navigationLink:hover {
-    background-color: lightgray;
+    background-color: rgb(68, 67, 67);
     scale: 1.2;
     transition: all 0.1s ease-in-out;
+    color: white;
 }

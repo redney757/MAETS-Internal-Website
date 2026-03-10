@@ -1,8 +1,11 @@
-import '../Design/test.css'
+import '../Design/Landing.css'
 function Landing() {
     return (
         <>
-        <p id="testp">teststststststst</p>
+            <div id='landingPageDiv'>
+                <p>Main Content</p>
+
+            </div>
         </>
     )
 }
