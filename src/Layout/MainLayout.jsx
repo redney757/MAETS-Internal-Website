@@ -6,11 +6,12 @@ import { useNavigate } from 'react-router'
 function MainLayout() {
  return (
     <>
-    <header>
+    <div id='headerDiv'>
+         <header>
+
     <div id='logoDiv'>
             <img id='MAETSLOGO' src={Logo} alt='MAETS LOGO'/>
     </div>
-    
           <nav>
                 <Link className='navigationLink' to='/home'>Home</Link>
                 <Link className='navigationLink' to='/about'>About</Link>
@@ -18,6 +19,10 @@ function MainLayout() {
                 <Link className='navigationLink' to='/directory'>Directory</Link>
         </nav> 
     </header>
+                    
+
+    </div>
+   
            
     
     

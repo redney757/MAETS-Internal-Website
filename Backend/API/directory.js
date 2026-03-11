@@ -51,9 +51,6 @@ app.get("/api/pbx/users", async (req, res) => {
       }
     );
 
-    console.log("USERS RESPONSE:", users.data);
-console.log("IS ARRAY users.data:", Array.isArray(users.data));
-console.log("IS ARRAY users.data.data:", Array.isArray(users.data?.data));
 
 res.json(
   Array.isArray(users.data)

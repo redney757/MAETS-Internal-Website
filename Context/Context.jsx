@@ -21,8 +21,11 @@ const AuthProvider = ({children}) => {
 
             const response = await axios.get("http://localhost:3001/api/pbx/users");
             console.log("PBX response:", response.data);
-
-            setPBXUsers(Array.isArray(response.data) ? response.data : []);
+            const sortedPBXUsers = response.data.sort((a,b)=> {
+                return a.displayname.localeCompare(b.displayname)
+            })
+            console.log(sortedPBXUsers)
+            setPBXUsers(Array.isArray(sortedPBXUsers) ? response.data : []);
         } catch (error) {
             console.error("PBX load error:", error.response?.data || error.message);
             setPBXError(error.response?.data || error.message);
