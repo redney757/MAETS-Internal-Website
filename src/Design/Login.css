@@ -1,0 +1,13 @@
+#loginPageDiv {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    align-content: center;
+    text-align: center;
+}
+#loginForm {
+    display: grid;
+    grid-template: auto / 1fr;
+    gap: 10px;
+    width: 300px;
+    margin: 0 auto;
+}

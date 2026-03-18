@@ -1,10 +1,9 @@
  #directoryPageDiv {
- grid-column: 2/3;
+    grid-column: 2/3;
     grid-row: 2/3;
-    padding: 15px;
-    
 }
 #searchBar {
+    grid-column: 1/6;
     margin-top: 15px;
     margin-bottom: 15px;
     width: 50%;
@@ -17,4 +16,33 @@
 }
 #searchBar:focus {
 outline: none;
+}
+.pbxUsers {
+display: grid;
+grid-template: auto / 1fr 1fr 1fr 1fr 1fr;
+    background-color: lightgray;
+    margin: 10px;
+    border-radius: 10px;
+}
+.pbxUserInfo {
+    padding: 10px;
+
+}
+#pbxusersDiv {
+    grid-template: auto / 1fr 1fr 1fr 1fr 1fr;
+}
+#searchHeaderDiv {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr 1fr;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+#titleDiv {
+    display: grid;
+     grid-template: 1fr / 1fr 1fr 1fr 1fr 1fr;
+     grid-column: 1/6;
+}
+h3 {
+    padding-left: 5px;
 }
