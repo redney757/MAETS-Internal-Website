@@ -9,7 +9,7 @@ body {
 #root {
   height: 100%;
   display: grid;
-  grid-template: 2fr 15fr 2fr / 2fr 11fr 2fr;
+  grid-template: 1fr 20fr / 2fr 20fr;
 }
 * {
   box-sizing: border-box;

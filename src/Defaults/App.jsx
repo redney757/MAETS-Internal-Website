@@ -4,7 +4,7 @@ import Landing from "../Content/Landing";
 import Directory from "../Content/Directory";
 import Login from "../Content/Login";
 import { useAuth } from "../../Context/Context";
-
+import Account from "../Content/Account";
 function PublicOnlyRoute({ children }) {
   const { user, loading } = useAuth();
 
@@ -23,7 +23,7 @@ function RequireAuth({ children }) {
   if (loading) return <p>Loading...</p>;
 
   if (!user) {
-    return <Navigate to="/api/login" replace />;
+    return <Navigate to="/login" replace />;
   }
 
   return children;
@@ -31,7 +31,7 @@ function RequireAuth({ children }) {
 
 function App() {
   const location = useLocation();
-  const hideLayout = location.pathname === "/api/login";
+  const hideLayout = location.pathname === "/login";
 
   return (
     <>
@@ -40,11 +40,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/home" element={<Landing />} />
-
-        <Route path="/directory" element={<Directory/>}/>
+        <Route path="/myAccount" element={<RequireAuth><Account /></RequireAuth>} />
+        <Route path="/directory" element={<RequireAuth><Directory /></RequireAuth>} />
 
         <Route
-          path="/api/login"
+          path="/login"
           element={
             <PublicOnlyRoute>
               <Login />

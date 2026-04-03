@@ -1,18 +1,26 @@
-import express from "express"
-import cors from 'cors'
-const app = express()
-import https from 'https'
-import axios from 'axios'
-import dotenv from "dotenv"
-import { authenticateLDAP } from "./API/login.js"
-import session from "express-session"
-dotenv.config()
-export default app;
+//API logic for PBX and LDAP authentication, as well as session management for user authentication state.
 
+//Import necessary modules and dependencies
+import express from "express" //Express framework for building the backend server
+import cors from 'cors' //CORS middleware to handle cross-origin requests from the frontend
+import https from 'https' //HTTPS module to create an agent for making secure requests to the PBX API
+import axios from 'axios' //Axios library for making HTTP requests to the PBX API and other external services
+import dotenv from "dotenv" //Dotenv library to load environment variables from a .env file for configuration settings such as LDAP credentials and session secrets
+import { authenticateLDAP } from "./API/login.js" //Import the authenticateLDAP function from the login.js file to handle LDAP authentication logic
+import session from "express-session" //Express-session middleware to manage user sessions and authentication state across requests
+
+// Set express equal to app for easier reference
+const app = express()
+// Load environment variables from .env file
+dotenv.config()
+// Export the app instance for use in other parts of the application, such as the server.js file where the server is started. This allows for better modularity and separation of concerns in the application architecture.
+export default app;
+//Middleware setup for App to use express.json() and express.urlencoded() to parse incoming request bodies, cors() to handle cross-origin requests from the frontend, and session() to manage user sessions with specific configuration settings such as cookie properties and session secret. This setup is essential for enabling the backend to properly handle authentication, maintain user sessions, and allow communication with the frontend application while ensuring security and proper handling of user data.
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
-const allowedOrigins = ["http://localhost:5173", "http://127.0.0.1:5173"]
-
+//define allowed origins for CORS to restrict access to the backend API to only trusted frontend origins
+const allowedOrigins = ["http://localhost:5173"]
+//define cors options to allow requests from the specified origins above and throw an error when a request is made from an origin that is not in the allowed list.
 app.use(cors({
    origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -23,7 +31,7 @@ app.use(cors({
   },
   credentials: true
 }));
-
+//Session configuration for managing user authentication state. The session is configured with a name, secret, and cookie properties to ensure secure handling of user sessions. The session middleware allows the backend to maintain user authentication state across requests, enabling features such as login persistence  and access control based on user authentication status. The cookie properties are set to enhance security by making the cookie HTTP-only, restricting it to same-site requests, and setting an appropriate expiration time for the session.
 app.use(session({
     name: "sid",
     secret: process.env.SESSION_SECRET,

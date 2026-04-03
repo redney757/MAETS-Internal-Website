@@ -14,7 +14,36 @@ function MainLayout() {
   };
  return (
     <>
-    <div id='headerDiv'>
+    <div id='sideNAVDiv'>
+       <div id='navWrapper'>
+          <nav id='mainNav'>
+                <Link className='navigationLink' to='/'>Home</Link>
+                <Link className='navigationLink' to='/about'>About</Link>
+                <Link className='navigationLink' to='/home'>OpenKM</Link>
+                <Link className='navigationLink' to='/directory'>Directory</Link>
+                 {user ? console.log("User in MainLayout:", user): console.log("No user in MainLayout")}
+                {
+                       
+                        user ? (
+                                <>
+                                <Link className='navigationLink' to='/myAccount'>Account</Link>
+                                <button onClick={handleLogout}>Logout</button>
+                                
+                                </>
+                        ):(
+                                <>
+                                <Link className='navigationLink' to='/login'>Login</Link>
+                                </>
+                        )
+
+                }
+               
+             
+                
+        </nav> 
+        </div>
+    </div>
+    {/* <div id='headerDiv'>
          <header>
 
     <div id='logoDiv'>
@@ -25,11 +54,14 @@ function MainLayout() {
                 <Link className='navigationLink' to='/about'>About</Link>
                 <Link className='navigationLink' to='/home'>OpenKM</Link>
                 <Link className='navigationLink' to='/directory'>Directory</Link>
-                <Link className='navigationLink' to='/myAccount'>Account</Link>
+                 {user ? console.log("User in MainLayout:", user): console.log("No user in MainLayout")}
                 {
+                       
                         user ? (
                                 <>
+                                <Link className='navigationLink' to='/myAccount'>Account</Link>
                                 <button onClick={handleLogout}>Logout</button>
+                                
                                 </>
                         ):(
                                 <>
@@ -42,11 +74,7 @@ function MainLayout() {
              
                 
         </nav> 
-    </header>
-                    
-
-    </div>
-   
+    </header> */}
            
     
     
