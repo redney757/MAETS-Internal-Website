@@ -1,16 +1,69 @@
 :root {
   height: 100vh;
+
+  --app-bg: #f4f6f5;
+  --surface: #ffffff;
+  --border: #d9dedb;
+  --text-main: #17221b;
+  --text-muted: #66736b;
+
+  --green: #0d6e39;
+  --green-dark: #083f24;
+  --nav-bg: #102018;
+  --nav-hover: #1a3326;
+  --nav-active: #0d6e39;
 }
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   height: 100vh;
-  margin: 0px;
-  
+  margin: 0;
+  overflow: hidden;
+  background: var(--app-bg);
+  color: var(--text-main);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
+
 #root {
   height: 100%;
   display: grid;
-  grid-template: 1fr 20fr / 2fr 20fr;
+  grid-template-areas:
+    "nav header"
+    "nav content";
+  grid-template-columns: 230px minmax(0, 1fr);
+  grid-template-rows: 72px minmax(0, 1fr);
+  background: var(--app-bg);
+  transition: grid-template-columns 0.3s ease-in-out;
 }
-* {
-  box-sizing: border-box;
+
+#root.collapsed {
+  grid-template-columns: 80px minmax(0, 1fr);
+}
+
+#root > header.header {
+  grid-area: header;
+  min-width: 0;
+}
+
+#root > div.nav {
+  grid-area: nav;
+  min-height: 0;
+}
+
+#root > div.content,
+#root > div.content.dir-page,
+#root > div.content.landing,
+#root > div.content.landing-page,
+#root > div.content.accountPage,
+#root > div.content.settingsPage {
+  grid-area: content;
+  min-width: 0;
+  min-height: 0;
+  padding: 22px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: var(--app-bg);
 }

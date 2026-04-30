@@ -4,6 +4,8 @@ import '../Design/index.css'
 import App from './App'
 import { BrowserRouter } from 'react-router'
 import { AuthProvider } from '../../Context/Context'
+import '../assets/icons.js'
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>

@@ -1,65 +1,211 @@
-#sideNAVDiv {
-    grid-column: 1/2;
-    grid-row: 1/3
-}
-#navWrapper {
-    height: 100vh;
-    background-color: #0d6e39;
-
-}
-#mainNav {
-   display: flex;
-    flex-direction: column;
-    align-items: center;
+.sideNAVDiv {
+  height: 100%;
+  width: 100%;
+  min-width: 230px;
+  max-width: 230px;
+  background: var(--nav-bg);
+  border-right: 1px solid #21382c;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease-in-out;
 }
 
-
-/* 
-#MAETSLOGO {
-    height: 60px;
-    width: 130px;
-
+.sideNAVDiv.collapsed {
+  min-width: 80px;
+  max-width: 80px;
+  width: 80px;
 }
+
+/* HEADER */
 #headerDiv {
-        grid-column: 1/4;
-        align-content: center;
-        top: 0;    
-        position:sticky;
-        --webkit-sticky: true;
+  height: 72px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
-header {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 180px;
-    padding-right: 180px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-    background-color: rgb(214, 219, 215);
-    box-shadow: 0px 0.5px 3px 1px black;
-}
-#logoDiv {
-    align-content: center;
-    text-align: center;
-}
-nav {
-    display: flex;
-    align-items: center;
-    
-}
-.navigationLink {
-    text-decoration: none;
-    list-style: none;
-    color: black;
-    margin-left: 50px;
-    padding: 10px;
-    border-radius: 10px;
 
+#logoDiv {
+  height: 72px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 22px;
+  background: var(--surface);
 }
+
+#MAETSLOGO {
+  max-height: 54px;
+  object-fit: contain;
+}
+
+/* NAV */
+#navWrapper {
+  flex-grow: 1;
+  padding-top: 18px;
+}
+
+#mainNav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#navLinkWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.navigationLink {
+  width: calc(100% - 24px);
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 8px;
+  background: transparent;
+  color: #cbd8d0;
+  text-decoration: none;
+  border: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 13px;
+
+  font-size: 14px;
+  font-weight: 500;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
 .navigationLink:hover {
-    background-color: rgb(68, 67, 67);
-    scale: 1.2;
-    transition: all 0.1s ease-in-out;
-    color: white;
-} */
+  background: var(--nav-hover);
+  color: #ffffff;
+}
+
+.navigationLink.selected {
+  background: var(--nav-active);
+  color: #ffffff;
+}
+
+.navigationLink svg {
+  min-width: 18px;
+  font-size: 16px;
+}
+
+.navText {
+  opacity: 1;
+  max-width: 160px;
+  white-space: nowrap;
+  overflow: hidden;
+  transition:
+    opacity 0.25s ease,
+    max-width 0.25s ease;
+}
+
+.sideNAVDiv.collapsed .navText {
+  opacity: 0;
+  max-width: 0;
+  pointer-events: none;
+}
+
+.sideNAVDiv.collapsed .navigationLink,
+.sideNAVDiv.collapsed #logoutButton {
+  justify-content: center;
+  width: 48px;
+  padding: 0;
+  gap: 0;
+}
+
+/* COLLAPSE BUTTON */
+#closeButtonWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding: 14px 12px 0;
+}
+
+.sideNAVDiv.collapsed #closeButtonWrapper {
+  justify-content: center;
+}
+
+#collapseNavButton {
+  width: 34px;
+  height: 30px;
+  border-radius: 8px;
+  background: #1a3326;
+  color: #d7e7dd;
+  border: 1px solid #294737;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+#collapseNavButton:hover {
+  background: var(--green);
+  color: white;
+}
+
+/* LOGIN / LOGOUT AREA */
+#loginDiv {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#accountLogoutDiv {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 16px;
+}
+
+#logoutButton {
+  width: calc(100% - 24px);
+  min-height: 44px;
+  padding: 0 14px;
+  border-radius: 8px;
+  background: transparent;
+  color: #cbd8d0;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 13px;
+
+  font-size: 14px;
+  font-weight: 500;
+  transition:
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+#logoutButton:hover {
+  background: #3a1f1f;
+  color: white;
+}
+
+.navigationLink.logout {
+  cursor: pointer;
+}
+
+hr {
+  opacity: 0;
+}

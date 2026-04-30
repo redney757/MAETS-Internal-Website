@@ -1,0 +1,653 @@
+.settingsPage {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  padding: 18px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #f5f7f5;
+}
+
+.settingsShell {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+.settingsHeader {
+  flex-shrink: 0;
+  padding: 4px 0 14px;
+  border-bottom: 1px solid #d7dfd8;
+}
+
+.settingsHeader h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: #0b5b2d;
+}
+
+.settingsHeader p {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: #6b746d;
+}
+
+.settingsContent {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 18px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  scrollbar-width: thin;
+  scrollbar-color: #0d6e39 transparent;
+}
+
+.settingsCard {
+  background: #ffffff;
+  border: 1px solid #d8ded9;
+  border-radius: 7px;
+  padding: 14px;
+}
+
+.settingsCard h2 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0b5b2d;
+}
+
+.settingsField {
+  margin-bottom: 12px;
+}
+
+.settingsField label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #7b847d;
+}
+
+.settingsField input {
+  width: 100%;
+  height: 38px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  border: 1px solid #cbd5ce;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #1f2521;
+  font-size: 14px;
+}
+
+.settingsField input::placeholder {
+  color: #7d857f;
+}
+
+.settingsField input:focus {
+  outline: none;
+  border-color: #0d6e39;
+  box-shadow: 0 0 0 2px rgba(13, 110, 57, 0.12);
+}
+
+.settingsField input:disabled {
+  background: #eef2ee;
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+.settingsFieldHint {
+  margin: 6px 0 0;
+  color: #7b847d;
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.passwordInputWrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.passwordInputWrap input {
+  flex: 1;
+}
+
+.showPassButton {
+  width: 38px;
+  height: 38px;
+  border: 1px solid #d8ded9;
+  border-radius: 8px;
+  background: #f5f7f5;
+  color: #0b5b2d;
+  cursor: pointer;
+}
+
+.showPassButton:hover {
+  background: #ffffff;
+  border-color: #0d6e39;
+}
+
+.showPassButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.settingsActions {
+  flex-shrink: 0;
+  padding-top: 12px;
+  border-top: 1px solid #d7dfd8;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.settingsActions button {
+  height: 38px;
+  padding: 0 14px;
+  border: 1px solid #0d6e39;
+  border-radius: 7px;
+  background: #0d6e39;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.settingsActions button:hover {
+  background: #09582d;
+}
+
+#cancelButton {
+  background: transparent;
+  border: 1px solid #d7dfd8;
+  color: #0b5b2d;
+  margin-left: 10px;
+}
+
+#cancelButton:hover {
+  background: #f5f7f5;
+  border-color: #0d6e39;
+  transition: all 0.1s ease-in-out;
+}
+
+.settingsSyncCard p {
+  margin: 6px 0 14px;
+  color: #6b746d;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.settingsSyncBasePreview {
+  margin: 10px 0 14px;
+  padding: 10px 12px;
+  border: 1px solid #d8ded9;
+  border-radius: 8px;
+  background: #f5f7f5;
+}
+
+.settingsSyncBasePreview span {
+  display: block;
+  margin-bottom: 4px;
+  color: #7b847d;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.settingsSyncBasePreview strong {
+  display: block;
+  color: #0b5b2d;
+  font-size: 13px;
+  line-height: 1.35;
+  word-break: break-word;
+}
+
+.settingsSyncButtons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.syncUsersButton,
+.ViewLDAPUsersButton {
+  min-height: 38px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 0 14px;
+}
+
+.syncUsersButton {
+  border: 1px solid #0b5b2d;
+  background: #0b5b2d;
+  color: #ffffff;
+}
+
+.syncUsersButton:hover {
+  background: #0d6e39;
+}
+
+.syncUsersButton:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.ViewLDAPUsersButton {
+  border: 1px solid #d8ded9;
+  background: #f5f7f5;
+  color: #0b5b2d;
+}
+
+.ViewLDAPUsersButton:hover {
+  background: #ffffff;
+  border-color: #0d6e39;
+}
+
+.settingsSyncResult {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.settingsSyncResult div {
+  padding: 10px;
+  border: 1px solid #d8ded9;
+  border-radius: 8px;
+  background: #f5f7f5;
+}
+
+.settingsSyncResult span {
+  display: block;
+  font-size: 12px;
+  color: #6b746d;
+  margin-bottom: 5px;
+}
+
+.settingsSyncResult strong {
+  display: block;
+  color: #0b5b2d;
+  font-size: 20px;
+}
+
+.settingsSyncError {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid #e2caca;
+  border-radius: 8px;
+  background: #fff6f6;
+  color: #8b2f2f;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.settingsSyncErrorsList {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.settingsSyncErrorsList div {
+  padding: 10px 12px;
+  border: 1px solid #e2caca;
+  border-radius: 8px;
+  background: #fff6f6;
+}
+
+.settingsSyncErrorsList strong {
+  display: block;
+  color: #8b2f2f;
+  font-size: 13px;
+}
+
+.settingsSyncErrorsList span {
+  display: block;
+  margin-top: 4px;
+  color: #6b746d;
+  font-size: 12px;
+}
+
+.settingsNoAccess {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid #d8ded9;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #6b746d;
+  font-size: 14px;
+}
+
+/* LDAP Users Modal */
+.ldapUsersListDiv {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(11, 20, 14, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  box-sizing: border-box;
+}
+
+.ldapUsersListWrapper {
+  width: min(1100px, 100%);
+  height: min(760px, 92vh);
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #d8ded9;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+.ldapUsersHeader {
+  flex-shrink: 0;
+  padding: 14px 16px;
+  border-bottom: 1px solid #d8ded9;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.ldapUsersHeader h2 {
+  margin: 0;
+  color: #0b5b2d;
+  font-size: 18px;
+}
+
+.ldapUsersHeader p {
+  margin: 4px 0 0;
+  color: #6b746d;
+  font-size: 13px;
+}
+
+.ldapUsersHeader button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #d8ded9;
+  border-radius: 8px;
+  background: #f5f7f5;
+  color: #0b5b2d;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.ldapUsersHeader button:hover {
+  background: #ffffff;
+  border-color: #0d6e39;
+}
+
+.ldapUsersToolbar {
+  flex-shrink: 0;
+  padding: 12px 16px;
+  border-bottom: 1px solid #d8ded9;
+}
+
+.ldapUsersToolbar input {
+  width: 100%;
+  height: 38px;
+  border: 1px solid #cbd5ce;
+  border-radius: 7px;
+  padding: 0 12px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.ldapUsersToolbar input:focus {
+  outline: none;
+  border-color: #0d6e39;
+  box-shadow: 0 0 0 2px rgba(13, 110, 57, 0.12);
+}
+
+.ldapUsersModalGrid {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+}
+
+.ldapUsersListPanel {
+  min-height: 0;
+  overflow-y: auto;
+  border-right: 1px solid #d8ded9;
+  background: #f5f7f5;
+}
+
+.ldapList {
+  list-style: none;
+  margin: 0;
+  padding: 10px;
+}
+
+.ldapList li {
+  margin-bottom: 8px;
+}
+
+.ldapUserItem {
+  width: 100%;
+  border: 1px solid #d8ded9;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 10px 12px;
+  text-align: left;
+  cursor: pointer;
+  color: #1f2521;
+}
+
+.ldapUserItem:hover,
+.ldapUserItem.active {
+  border-color: #0d6e39;
+  background: #ffffff;
+}
+
+.ldapUserItem strong {
+  display: block;
+  color: #0b5b2d;
+  font-size: 14px;
+}
+
+.ldapUserItem span {
+  display: block;
+  margin-top: 4px;
+  color: #6b746d;
+  font-size: 12px;
+}
+
+.ldapUserItem small {
+  display: block;
+  margin-top: 3px;
+  color: #7b847d;
+  font-size: 12px;
+}
+
+.ldapUserItem em {
+  display: inline-flex;
+  margin-top: 8px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #fff6f6;
+  color: #8b2f2f;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.ldapUserDetailsPanel {
+  min-height: 0;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.ldapUsersEmpty {
+  margin: 12px;
+  padding: 18px;
+  border: 1px dashed #cbd5ce;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #6b746d;
+  font-size: 13px;
+  text-align: center;
+}
+
+.ldapUserProfile h3,
+.ldapAssociatedSection h3 {
+  margin: 0 0 8px;
+  color: #0b5b2d;
+  font-size: 16px;
+}
+
+.ldapUserProfile p {
+  margin: 0 0 14px;
+  color: #6b746d;
+  font-size: 13px;
+}
+
+.ldapUserMetaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.ldapUserMetaGrid div,
+.ldapUserDnBlock {
+  padding: 10px;
+  border: 1px solid #d8ded9;
+  border-radius: 8px;
+  background: #f5f7f5;
+}
+
+.ldapUserMetaGrid span,
+.ldapUserDnBlock span {
+  display: block;
+  color: #7b847d;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.ldapUserMetaGrid strong,
+.ldapUserDnBlock strong {
+  display: block;
+  color: #1f2521;
+  font-size: 13px;
+  word-break: break-word;
+}
+
+.ldapUserDnBlock {
+  margin-top: 10px;
+}
+
+.ldapAssociatedSection {
+  margin-top: 18px;
+}
+
+.ldapAssociatedList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ldapAssociatedCard {
+  padding: 10px 12px;
+  border: 1px solid #d8ded9;
+  border-radius: 8px;
+  background: #f5f7f5;
+}
+
+.ldapAssociatedCard strong {
+  display: block;
+  color: #0b5b2d;
+  font-size: 14px;
+}
+
+.ldapAssociatedCard span {
+  display: block;
+  margin-top: 4px;
+  color: #1f2521;
+  font-size: 13px;
+}
+
+.ldapAssociatedCard small {
+  display: block;
+  margin-top: 4px;
+  color: #6b746d;
+  font-size: 12px;
+}
+
+.ldapRoleList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ldapRoleList span {
+  padding: 8px 10px;
+  border: 1px solid #d8ded9;
+  border-radius: 8px;
+  background: #f5f7f5;
+  color: #1f2521;
+  font-size: 12px;
+  word-break: break-word;
+}
+
+@media (max-width: 900px) {
+  .ldapUsersModalGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .ldapUsersListPanel {
+    border-right: none;
+    border-bottom: 1px solid #d8ded9;
+    max-height: 280px;
+  }
+
+  .ldapUserMetaGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 800px) {
+  .settingsSyncResult {
+    grid-template-columns: 1fr;
+  }
+
+  .syncUsersButton,
+  .ViewLDAPUsersButton {
+    width: 100%;
+  }
+
+  .settingsSyncButtons {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 860px) {
+  .settingsPage {
+    padding: 10px;
+  }
+
+  .settingsHeader h1 {
+    font-size: 24px;
+  }
+
+  .settingsContent {
+    padding: 14px 0;
+  }
+}
